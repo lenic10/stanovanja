@@ -158,6 +158,7 @@ setInterval(
 							headers: {
 								"user-agent": "curl/7.47.0"
 							},
+							port: 8080,
 							timeout:   5000,
 							strictSSL: false,
 							maxRedirects:2
