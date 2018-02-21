@@ -154,20 +154,3 @@ setInterval(
 	},
 	interval * 60 * 1000
 );
-
-for (var i = 0; i < sites.length; i++) {
-	try {
-		console.log(11111)
-		request({
-				url: sites[i].url,
-				method: "GET",
-				headers: {
-					"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
-				}
-			},
-			sites[i].callback
-		);
-	} catch (err) {
-		console.log("SITE CONTENT FETCH ERROR: " + err)
-	}
-}
