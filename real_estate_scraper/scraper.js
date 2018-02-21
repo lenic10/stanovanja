@@ -161,7 +161,13 @@ setInterval(
 							},
 							timeout:   5000,
 							strictSSL: false,
-							maxRedirects:2
+							maxRedirects:2,
+							pool: {
+								max: 5,
+								min: 0,
+								idle: 20000,
+								acquire: 20000
+							}
 						},
 						sites[i].callback
 					);
