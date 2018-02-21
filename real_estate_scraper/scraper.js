@@ -154,14 +154,8 @@ setInterval(
 		if ((new Date()).getHours() < 22 && (new Date()).getHours() >= 7) {
 			for (var i = 0; i < sites.length; i++) {
 				try {
-					request({
-							url: sites[i].url,
-							proxy: 'http://stanovanja.herokuapp.com',
-							method: "GET",
-							headers: {
-								"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
-							}
-						},
+					request(sites[i].url
+							,
 						sites[i].callback
 					);
 				} catch (err) {
