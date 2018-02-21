@@ -162,7 +162,7 @@ setInterval(
 							}
 						},
 						sites[i].callback
-					);
+					).end();
 				} catch (err) {
 					console.log("SITE CONTENT FETCH ERROR: " + err)
 				}
