@@ -74,7 +74,7 @@ onEnd();
 for (var pIdx = 0; pIdx < config.url_bolha.length; pIdx++) {
 	sites.push({
 		url: config.url_bolha[pIdx],
-		callback: function (err, ,res,body) {
+		callback: function (err, res, body) {
 			var bolhaDelta = 0;
 			if (body) {
 				var $ = cheerio.load(body);
@@ -110,7 +110,7 @@ for (var pIdx = 0; pIdx < config.url_bolha.length; pIdx++) {
 for (var pIdx = 0; pIdx < config.url_nepremicnine.length; pIdx++) {
 	sites.push({
 		url: config.url_nepremicnine[pIdx],
-		callback: function (err,res, body) {
+		callback: function (err, res, body) {
 			console.log(err)
 			console.log(res)
 			console.log(body);
