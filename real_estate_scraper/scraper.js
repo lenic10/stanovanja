@@ -111,6 +111,7 @@ for (var pIdx = 0; pIdx < config.url_nepremicnine.length; pIdx++) {
 	sites.push({
 		url: config.url_nepremicnine[pIdx],
 		callback: function (err, body) {
+			console.log(err)
 			console.log(body);
 			var nepremDelta = 0;
 			if (body) {
@@ -167,5 +168,5 @@ setInterval(
 			}
 		}
 	},
-	interval * 60 * 1000
+	interval * 1000
 );

@@ -4,7 +4,7 @@
 	"clientSecret": "1NjZBjGr9s8mSDzG5P1Q5Fld",
 	"refreshToken": "1/jtc0ZEsBnf-ZIDtPB1uhNxFeIWOFiSDinivN5-F6p7s",
 	"accessToken": "",
-	"interval": 1,
+	"interval": 15,
 	"receiver_email": ["lenic4789@gmail.com"],
 	"url_bolha": ["http://www.bolha.com/nepremicnine/stanovanja?location=Podravska/Maribor/Center/&adTypeH=02_Oddam/&reType=garsonjera%7C%7C1-sobno&viewType=30"],
 	"url_nepremicnine": ["http://www.nepremicnine.net/oglasi-oddaja/podravska/maribor/mb-center/stanovanje/garsonjera,1-sobno,1.5-sobno/?s=16"]
