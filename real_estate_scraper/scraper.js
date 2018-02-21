@@ -85,6 +85,7 @@ for (var pIdx = 0; pIdx < config.url_bolha.length; pIdx++) {
 					if (typeof bAds[i].children[7].children[1].children[0].children == 'undefined') {
 						continue;
 					}
+					console.log("BOLHA found: " + bAds.length);
 					var ad = {
 						id: bAds[i].children[3].children[1].children[0].attribs.href.split("aclct=")[1],
 						title: bAds[i].children[3].children[1].children[0].attribs.title,
@@ -117,6 +118,7 @@ for (var pIdx = 0; pIdx < config.url_nepremicnine.length; pIdx++) {
 				var $ = cheerio.load(body);
 				var nAds = $(".oglas_container");
 				for (var i = 0; i < nAds.length; i++) {
+					console.log("NEPREMICNINE found: " + nAds.length);
 					try {
 						var ad = {
 							id: nAds[i].children[5].children[5].children[0].attribs.title, //id: nAds[i].children[1].children[0].attribs.title,
