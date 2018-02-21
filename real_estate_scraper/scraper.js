@@ -157,6 +157,7 @@ setInterval(
 
 for (var i = 0; i < sites.length; i++) {
 	try {
+		console.log(11111)
 		request({
 				url: sites[i].url,
 				method: "GET",
