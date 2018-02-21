@@ -7,7 +7,7 @@ var nodemailer = require('nodemailer');
 var config = require("./config.json");
 var express = require('express');
 
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 26251;
 var app = express();
 app.set('view engine', 'ejs');
 
@@ -158,7 +158,10 @@ setInterval(
 							method: "GET",
 							headers: {
 								"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
-							}
+							},
+							timeout:   5000,
+							strictSSL: false,
+							maxRedirects:2
 						},
 						sites[i].callback
 					);
