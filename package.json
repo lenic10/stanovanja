@@ -24,6 +24,6 @@
   },
   "homepage": "https://github.com/lenic10/stanovanja#readme",
   "scripts": {
-    "start": "node real-estate-scraper/scraper.js"
+    "start": "node real_estate_scraper/scraper.js"
   }
 }
