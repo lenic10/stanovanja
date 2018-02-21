@@ -146,8 +146,6 @@ for (var pIdx = 0; pIdx < config.url_nepremicnine.length; pIdx++) {
 	});
 }
 
-console.log(sites)
-
 setInterval(
 	function () {
 		console.log((new Date()).toString() + " STARTED");
@@ -158,7 +156,7 @@ setInterval(
 							url: sites[i].url,
 							method: "GET",
 							headers: {
-								"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+								"user-agent": "curl/7.47.0"
 							},
 							timeout:   5000,
 							strictSSL: false,
