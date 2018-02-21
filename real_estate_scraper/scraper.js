@@ -7,7 +7,7 @@ var nodemailer = require('nodemailer');
 var config = require("./config.json");
 var express = require('express');
 
-var port = process.env.PORT || 26251;
+var port = process.env.PORT || 8080;
 var app = express();
 app.set('view engine', 'ejs');
 
@@ -146,11 +146,12 @@ for (var pIdx = 0; pIdx < config.url_nepremicnine.length; pIdx++) {
 	});
 }
 
+console.log(sites)
 
 setInterval(
 	function () {
 		console.log((new Date()).toString() + " STARTED");
-		if ((new Date()).getHours() < 22 && (new Date()).getHours() >= 7) {
+		//if ((new Date()).getHours() < 22 && (new Date()).getHours() >= 7) {
 			for (var i = 0; i < sites.length; i++) {
 				try {
 					request({
@@ -161,13 +162,7 @@ setInterval(
 							},
 							timeout:   5000,
 							strictSSL: false,
-							maxRedirects:2,
-							pool: {
-								max: 5,
-								min: 0,
-								idle: 20000,
-								acquire: 20000
-							}
+							maxRedirects:2
 						},
 						sites[i].callback
 					);
@@ -175,7 +170,7 @@ setInterval(
 					console.log("SITE CONTENT FETCH ERROR: " + err)
 				}
 			}
-		}
+		//}
 	},
 	interval * 1000
 );
