@@ -7,7 +7,7 @@ var nodemailer = require('nodemailer');
 var config = require("./config.json");
 var express = require('express');
 
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 5000;
 var app = express();
 app.set('view engine', 'ejs');
 
@@ -110,10 +110,9 @@ for (var pIdx = 0; pIdx < config.url_bolha.length; pIdx++) {
 for (var pIdx = 0; pIdx < config.url_nepremicnine.length; pIdx++) {
 	sites.push({
 		url: config.url_nepremicnine[pIdx],
-		callback: function (err, res, body) {
+		callback: function (err, resp, body) {
 			console.log(err)
-			console.log(res)
-			console.log(body);
+			console.log(body)
 			var nepremDelta = 0;
 			if (body) {
 				var $ = cheerio.load(body);
@@ -156,15 +155,13 @@ setInterval(
 				try {
 					request({
 							url: sites[i].url,
-							timeout: 1000,
-							proxy: 'http://stanovanja.herokuapp.com',
 							method: "GET",
 							headers: {
 								"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
 							}
 						},
 						sites[i].callback
-					).end();
+					);
 				} catch (err) {
 					console.log("SITE CONTENT FETCH ERROR: " + err)
 				}
