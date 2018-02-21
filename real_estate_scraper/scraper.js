@@ -95,14 +95,17 @@ for (var pIdx = 0; pIdx < config.url_bolha.length; pIdx++) {
 }
 
 for (var pIdx = 0; pIdx < config.url_nepremicnine.length; pIdx++) {
+	console.log(1);
 	sites.push({
 		url: config.url_nepremicnine[pIdx],
 		callback: function (err, body) {
+			console.log(2);
 			var nepremDelta = 0;
 			if (body) {
 				var $ = cheerio.load(body);
 				var nAds = $(".oglas_container");
 				for (var i = 0; i < nAds.length; i++) {
+					console.log(3);
 					try {
 						var ad = {
 							id: nAds[i].children[5].children[5].children[0].attribs.title, //id: nAds[i].children[1].children[0].attribs.title,
