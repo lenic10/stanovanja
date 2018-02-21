@@ -5,13 +5,14 @@
   "main": "real-estate-scraper/scraper.js",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.2",
     "node-json-db": "^0.7.3",
     "nodemailer": "^4.4.2",
     "tinyreq": "^3.3.1"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node real_estate_scraper/scraper.js"
   },
   "repository": {
     "type": "git",
@@ -22,8 +23,5 @@
   "bugs": {
     "url": "https://github.com/lenic10/stanovanja/issues"
   },
-  "homepage": "https://github.com/lenic10/stanovanja#readme",
-  "scripts": {
-    "start": "node real_estate_scraper/scraper.js"
-  }
+  "homepage": "https://github.com/lenic10/stanovanja#readme"
 }

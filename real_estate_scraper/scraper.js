@@ -5,6 +5,20 @@ var cheerio = require("cheerio");
 var JsonDB = require('node-json-db');
 var nodemailer = require('nodemailer');
 var config = require("./config.json");
+var express = require('express');
+
+var port = process.env.PORT || 8080;
+var app = express();
+app.set('view engine', 'ejs');
+
+app.get('/', function (req, res) {
+
+	res.write('Ita works!');
+	res.send(200);
+});
+app.listen(port, function () {
+	console.log('Our app is running on somewhere:' + port);
+});
 
 var transporter = nodemailer.createTransport({
 	service: "Gmail",
