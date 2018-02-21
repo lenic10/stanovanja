@@ -8,6 +8,7 @@
     "express": "^4.16.2",
     "node-json-db": "^0.7.3",
     "nodemailer": "^4.4.2",
+    "request": "^2.83.0",
     "tinyreq": "^3.3.1"
   },
   "devDependencies": {},
