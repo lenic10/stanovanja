@@ -9,7 +9,7 @@ var express = require('express');
 
 var port = process.env.PORT || 8080;
 var app = express();
-app.set('view engine', 'ejs');
+/*app.set('view engine', 'ejs');
 
 app.get('/', function (req, res) {
 	res.send(200).send('adsadasdsadads');
@@ -17,7 +17,7 @@ app.get('/', function (req, res) {
 app.listen(port, function () {
 	console.log('Our app is running on somewhere:' + port);
 });
-
+*/
 var transporter = nodemailer.createTransport({
 	service: "Gmail",
 	auth: {
@@ -150,25 +150,25 @@ setInterval(
 	function () {
 		console.log((new Date()).toString() + " STARTED");
 		//if ((new Date()).getHours() < 22 && (new Date()).getHours() >= 7) {
-			for (var i = 0; i < sites.length; i++) {
-				try {
-					request({
-							url: sites[i].url,
-							method: "GET",
-							headers: {
-								"user-agent": "curl/7.47.0"
-							},
-							port: 8080,
-							timeout:   5000,
-							strictSSL: false,
-							maxRedirects:2
+		for (var i = 0; i < sites.length; i++) {
+			try {
+				request({
+						url: sites[i].url,
+						method: "GET",
+						headers: {
+							"user-agent": "curl/7.47.0"
 						},
-						sites[i].callback
-					);
-				} catch (err) {
-					console.log("SITE CONTENT FETCH ERROR: " + err)
-				}
+						port: 8080,
+						timeout: 5000,
+						strictSSL: false,
+						maxRedirects: 2
+					},
+					sites[i].callback
+				);
+			} catch (err) {
+				console.log("SITE CONTENT FETCH ERROR: " + err)
 			}
+		}
 		//}
 	},
 	interval * 1000
